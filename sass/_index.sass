@@ -1,18 +1,20 @@
 .card
-    width: 80%
+    margin-top: 2rem
+    width: 90%
+    max-height: 90%
     background-color: $background-card
     border-radius: 1rem
     display: flex
     flex-direction: column
 
 .card__img
-    height: 10rem
+    min-height: 9rem
     position: relative
     display: flex
     justify-content: center
 
     .img
-        height: 18rem
+        height: 14rem
         position: absolute
         bottom: 0
 
@@ -20,6 +22,7 @@
     display: flex
     flex-direction: column
     text-align: center
+    overflow: auto
 
     .card__title
         font-size: 2.4rem
@@ -29,19 +32,33 @@
 
         .card__item
             padding: .8rem
+            position: relative
 
             .card__link
-                display: flex
-                justify-content: center
-                align-items: center
+                width: 100%
+                display: grid
+                grid-template-columns: 1fr auto
                 font-size: 1.2rem
 
                 .card__link-row--rotate
                     transform: rotate(180deg)
 
-            .card__item-info
-                padding: 1rem
-                display: none
+            .card__block
+                padding: 0
+                height: 0
+                transition: all 1s ease
 
-            .card__item-info--show
-                display: flex
+                .card__item-info
+                    text-align: justify
+                    position: sticky
+                    z-index: -1
+                    transform: translateY(-100%)
+
+                .card__item-info--show
+                    transform: translate(0)
+                    z-index: 0
+                    transition: .3s
+
+            .card__block--show
+                height: auto
+                padding: 1rem 0
