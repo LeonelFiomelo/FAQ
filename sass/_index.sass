@@ -12,6 +12,7 @@
     justify-content: center
 
     .img
+        height: 18rem
         position: absolute
         bottom: 0
 
@@ -21,8 +22,26 @@
     text-align: center
 
     .card__title
-        padding: 1.2rem
+        font-size: 2.4rem
 
     .card__list
+        padding: 1.2rem 1.2rem 2rem
+
         .card__item
             padding: .8rem
+
+            .card__link
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 1.2rem
+
+                .card__link-row--rotate
+                    transform: rotate(180deg)
+
+            .card__item-info
+                padding: 1rem
+                display: none
+
+            .card__item-info--show
+                display: flex
